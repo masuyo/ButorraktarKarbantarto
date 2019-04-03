@@ -52,6 +52,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Enums\Anyagfelek.cs" />
+    <Compile Include="Models\Butor.cs" />
+    <Compile Include="Models\Enums\Helysegek.cs" />
+    <Compile Include="Models\Meret.cs" />
+    <Compile Include="Models\Tartozek.cs" />
+    <Compile Include="Models\Enums\TartozekTipusok.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">

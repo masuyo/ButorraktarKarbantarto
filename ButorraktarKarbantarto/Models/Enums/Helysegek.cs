@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace ButorraktarKarbantarto.Models
 {
-    enum Helysegek
+    public enum Helysegek
     {
         Furdo,
         Nappali,
-        Konhya
+        Konyha
     }
 }

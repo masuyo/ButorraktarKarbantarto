@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ButorraktarKarbantarto.Models
 {
-    class Tartozek
+    public class Tartozek
     {
         public TartozekTipusok Tipus { get; }
         public int Ar { get; set; }

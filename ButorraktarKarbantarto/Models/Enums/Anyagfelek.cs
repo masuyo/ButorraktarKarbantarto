@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ButorraktarKarbantarto.Models
 {
-    enum Anyagfelek
+    public enum Anyagfelek
     {
         Fa,
         Fem,

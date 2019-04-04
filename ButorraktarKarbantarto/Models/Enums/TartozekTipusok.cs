@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ButorraktarKarbantarto.Models
 {
-    enum TartozekTipusok
+    public enum TartozekTipusok
     {
         TartoElem,
         ExtraElem,

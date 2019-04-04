@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace ButorraktarKarbantarto.Models
 {
-    class Butor
+    public class Butor
     {
-        public Meret Meret { get; }
         public string Megnevezes { get; }
+        public Meret Meret { get; }
         public Anyagfelek Anyaga { get; }
         public Helysegek Elhelyezes { get; }
         public int Darabszam { get; set; }
         public List<Tartozek> Tartozekok { get; }
 
-        public Butor(Meret meret, string megnevezes, Anyagfelek anyaga, Helysegek elhelyezes, int darabszam)
+        public Butor(string megnevezes, Meret meret, Anyagfelek anyaga, Helysegek elhelyezes, int darabszam)
         {
-            Meret = meret;
             Megnevezes = megnevezes;
+            Meret = meret;
             Anyaga = anyaga;
             Elhelyezes = elhelyezes;
             Darabszam = darabszam;

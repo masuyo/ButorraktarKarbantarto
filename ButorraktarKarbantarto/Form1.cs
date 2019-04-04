@@ -13,26 +13,28 @@ namespace ButorraktarKarbantarto
 {
     public partial class Form1 : Form
     {
-        Raktar Raktar = new Raktar();
+        Raktar Raktar;
+        public ListBox ListBoxRef;
         
         public Form1()
         {
-            Feloltes();
+            Raktar = new Raktar();
+          
             InitializeComponent();
+
+            //listBox1.Items = Raktar.Butorok;
+            ListBoxRef = listBox1;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form2 form = new Form2(Raktar);
+            Form2 form = new Form2(Raktar, this);
             form.Show();
         }
 
-        private void Feloltes()
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            foreach (Butor butor in Raktar.Butorok)
-            {
-                listBox1.Items.Add(butor);
-            }
+
         }
     }
 }

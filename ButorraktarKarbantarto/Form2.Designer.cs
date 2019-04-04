@@ -85,6 +85,7 @@
             this.megse.Text = "Mégse";
             this.megse.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.megse.UseVisualStyleBackColor = true;
+            this.megse.Click += new System.EventHandler(this.megse_Click);
             // 
             // label1
             // 

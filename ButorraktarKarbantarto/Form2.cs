@@ -16,10 +16,13 @@ namespace ButorraktarKarbantarto
         public Raktar Raktar { get; set; }
         public Anyagfelek Anyag { get; set; }
         public Helysegek Elhelyezes { get; set; }
-        public Form2(Raktar raktar)
+
+        public Form1 myForm { get; set; }
+        public Form2(Raktar raktar, Form1 form)
         {
             Raktar = raktar;
             Anyag = Anyagfelek.Fa;
+            myForm = form;
             InitializeComponent();
         }
 
@@ -32,7 +35,12 @@ namespace ButorraktarKarbantarto
         {
             Meret meret = new Meret(int.Parse(xTxb.Text), int.Parse(yTxb.Text), int.Parse(zTxb.Text));
             Butor butor = new Butor(megnevezesTxb.Text, meret, Anyag, Elhelyezes, int.Parse(darab.Text));
-            Raktar.Hozzaad(butor);
+
+            if (Raktar.Hozzaad(butor))
+            {
+                myForm.ListBoxRef.Items.Add(butor.Megnevezes + ", " + butor.Elhelyezes.ToString());
+            }
+            
         }
 
         private void Anyag_CheckedChanged(object sender, EventArgs e)
@@ -73,5 +81,9 @@ namespace ButorraktarKarbantarto
             }
         }
 
+        private void megse_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

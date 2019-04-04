@@ -35,10 +35,13 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
+            this.listBox1.Items.AddRange(new object[] {
+            "Item.Megnevezes"});
             this.listBox1.Location = new System.Drawing.Point(12, 73);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(776, 303);
             this.listBox1.TabIndex = 0;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // button1
             // 
@@ -49,7 +52,6 @@
             this.button1.Text = "Felvitel";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-
             // 
             // Form1
             // 

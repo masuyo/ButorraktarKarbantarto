@@ -16,12 +16,14 @@ namespace ButorraktarKarbantarto
             Butorok = new List<Butor>();
         }
 
-        public void Hozzaad(Butor butor)
+        public bool Hozzaad(Butor butor)
         {
             if (!MegnevezesLetezik(butor.Megnevezes))
             {
                 Butorok.Add(butor);
+                return true;
             }
+            return false;
         }
 
         public bool MegnevezesLetezik(string megnevezes)

@@ -48,5 +48,11 @@ namespace ButorraktarKarbantarto.Models
             return osszesAr;
         }
 
+        public void TartozekHozzaad(Tartozek tartozek)
+        {
+            Tartozekok.Add(tartozek);
+            //Tartozekok.Remove
+        }
+
     }
 }

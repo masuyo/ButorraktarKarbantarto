@@ -51,7 +51,12 @@ namespace ButorraktarKarbantarto.Models
         public void TartozekHozzaad(Tartozek tartozek)
         {
             Tartozekok.Add(tartozek);
-            //Tartozekok.Remove
+        }
+
+        public override string ToString()
+        {
+            string butorString = "Megnevezés: " + Megnevezes + ", Darabszám: " + Darabszam;
+            return butorString;
         }
 
     }

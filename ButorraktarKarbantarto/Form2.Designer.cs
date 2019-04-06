@@ -45,11 +45,12 @@
             this.furdo = new System.Windows.Forms.RadioButton();
             this.nappali = new System.Windows.Forms.RadioButton();
             this.konyha = new System.Windows.Forms.RadioButton();
-            this.darab = new System.Windows.Forms.DomainUpDown();
             this.anyagBox = new System.Windows.Forms.GroupBox();
             this.helysegBox = new System.Windows.Forms.GroupBox();
+            this.darab = new System.Windows.Forms.NumericUpDown();
             this.anyagBox.SuspendLayout();
             this.helysegBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.darab)).BeginInit();
             this.SuspendLayout();
             // 
             // megnevezesTxb
@@ -186,6 +187,7 @@
             // furdo
             // 
             this.furdo.AutoSize = true;
+            this.furdo.Checked = true;
             this.furdo.Location = new System.Drawing.Point(15, 0);
             this.furdo.Name = "furdo";
             this.furdo.Size = new System.Drawing.Size(49, 17);
@@ -202,7 +204,6 @@
             this.nappali.Name = "nappali";
             this.nappali.Size = new System.Drawing.Size(59, 17);
             this.nappali.TabIndex = 20;
-            this.nappali.TabStop = true;
             this.nappali.Text = "nappali";
             this.nappali.UseVisualStyleBackColor = true;
             this.nappali.CheckedChanged += new System.EventHandler(this.Elhelyezes_CheckedChanged);
@@ -214,18 +215,9 @@
             this.konyha.Name = "konyha";
             this.konyha.Size = new System.Drawing.Size(60, 17);
             this.konyha.TabIndex = 21;
-            this.konyha.TabStop = true;
             this.konyha.Text = "konyha";
             this.konyha.UseVisualStyleBackColor = true;
             this.konyha.CheckedChanged += new System.EventHandler(this.Elhelyezes_CheckedChanged);
-            // 
-            // darab
-            // 
-            this.darab.Location = new System.Drawing.Point(86, 138);
-            this.darab.Name = "darab";
-            this.darab.Size = new System.Drawing.Size(120, 20);
-            this.darab.TabIndex = 22;
-            this.darab.Text = "0";
             // 
             // anyagBox
             // 
@@ -249,14 +241,21 @@
             this.helysegBox.TabIndex = 24;
             this.helysegBox.TabStop = false;
             // 
+            // darab
+            // 
+            this.darab.Location = new System.Drawing.Point(86, 143);
+            this.darab.Name = "darab";
+            this.darab.Size = new System.Drawing.Size(120, 20);
+            this.darab.TabIndex = 25;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(521, 220);
+            this.Controls.Add(this.darab);
             this.Controls.Add(this.helysegBox);
             this.Controls.Add(this.anyagBox);
-            this.Controls.Add(this.darab);
             this.Controls.Add(this.zTxb);
             this.Controls.Add(this.yTxb);
             this.Controls.Add(this.label5);
@@ -275,6 +274,7 @@
             this.anyagBox.PerformLayout();
             this.helysegBox.ResumeLayout(false);
             this.helysegBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.darab)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -299,8 +299,8 @@
         private System.Windows.Forms.RadioButton furdo;
         private System.Windows.Forms.RadioButton nappali;
         private System.Windows.Forms.RadioButton konyha;
-        private System.Windows.Forms.DomainUpDown darab;
         private System.Windows.Forms.GroupBox anyagBox;
         private System.Windows.Forms.GroupBox helysegBox;
+        private System.Windows.Forms.NumericUpDown darab;
     }
 }

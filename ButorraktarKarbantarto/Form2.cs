@@ -34,11 +34,12 @@ namespace ButorraktarKarbantarto
         private void hozzaAd_Click(object sender, EventArgs e)
         {
             Meret meret = new Meret(int.Parse(xTxb.Text), int.Parse(yTxb.Text), int.Parse(zTxb.Text));
-            Butor butor = new Butor(megnevezesTxb.Text, meret, Anyag, Elhelyezes, int.Parse(darab.Text));
+            Butor butor = new Butor(megnevezesTxb.Text, meret, Anyag, Elhelyezes, Convert.ToInt16(darab.Value));
+            //myForm.ListBoxRef.DataSource = Raktar.Butorok;
 
             if (Raktar.Hozzaad(butor))
             {
-                myForm.ListBoxRef.Items.Add(butor.Megnevezes + ", " + butor.Elhelyezes.ToString());
+                myForm.ListBoxRef.Items.Add(butor);
             }
             
         }

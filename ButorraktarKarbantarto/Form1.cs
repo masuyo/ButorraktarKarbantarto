@@ -14,8 +14,10 @@ namespace ButorraktarKarbantarto
     public partial class Form1 : Form
     {
         Raktar Raktar;
-        public ListBox ListBoxRef;
-        
+        public ListBox ListBoxRef { get; set; }
+        public ListBox TartozekokBox { get; set; }
+        public Butor KivalasztottButor { get; set; }
+
         public Form1()
         {
             Raktar = new Raktar();
@@ -23,7 +25,8 @@ namespace ButorraktarKarbantarto
             InitializeComponent();
 
             //listBox1.Items = Raktar.Butorok;
-            ListBoxRef = listBox1;
+            ListBoxRef = butorok;
+            TartozekokBox = tartozekok;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -32,9 +35,16 @@ namespace ButorraktarKarbantarto
             form.Show();
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
+            Form3 form = new Form3(Raktar, this);
+            form.Show();
+        }
 
+        private void ButorListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            KivalasztottButor = butorok.SelectedItem as Butor;
+            tartozekok.DataSource = KivalasztottButor.Tartozekok;
         }
     }
 }

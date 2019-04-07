@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +14,7 @@ namespace ButorraktarKarbantarto.Models
         public Anyagfelek Anyaga { get; }
         public Helysegek Elhelyezes { get; }
         public int Darabszam { get; set; }
-        public List<Tartozek> Tartozekok { get; }
+        public BindingList<Tartozek> Tartozekok { get; }
 
         public Butor(string megnevezes, Meret meret, Anyagfelek anyaga, Helysegek elhelyezes, int darabszam)
         {
@@ -22,7 +23,7 @@ namespace ButorraktarKarbantarto.Models
             Anyaga = anyaga;
             Elhelyezes = elhelyezes;
             Darabszam = darabszam;
-            Tartozekok = new List<Tartozek>(50);
+            Tartozekok = new BindingList<Tartozek>();
         }
 
         public int Ar()
@@ -50,13 +51,16 @@ namespace ButorraktarKarbantarto.Models
 
         public void TartozekHozzaad(Tartozek tartozek)
         {
-            Tartozekok.Add(tartozek);
+            if (Tartozekok.Count <= 50)
+            {
+                Tartozekok.Add(tartozek);
+            }
         }
 
         public override string ToString()
         {
-            string butorString = "Megnevezés: " + Megnevezes + ", Darabszám: " + Darabszam;
-            return butorString;
+            string butorFormatum = "Megnevezés: " + Megnevezes + ", Darabszám: " + Darabszam;
+            return butorFormatum;
         }
 
     }

@@ -1,6 +1,6 @@
 ﻿namespace ButorraktarKarbantarto
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -37,8 +37,6 @@
             // butorok
             // 
             this.butorok.FormattingEnabled = true;
-            this.butorok.Items.AddRange(new object[] {
-            "Butor megnevezese; butor szara; butor 2. szara;"});
             this.butorok.Location = new System.Drawing.Point(12, 73);
             this.butorok.Name = "butorok";
             this.butorok.Size = new System.Drawing.Size(383, 303);
@@ -53,7 +51,7 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "Bútor felvitel";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.ButorFelvitel_Click);
             // 
             // tartozekok
             // 
@@ -71,7 +69,7 @@
             this.tartozekFelvitelButton.TabIndex = 3;
             this.tartozekFelvitelButton.Text = "Tartozék felvitel";
             this.tartozekFelvitelButton.UseVisualStyleBackColor = true;
-            this.tartozekFelvitelButton.Click += new System.EventHandler(this.button2_Click);
+            this.tartozekFelvitelButton.Click += new System.EventHandler(this.TartozekFelvitel_Click);
             // 
             // Form1
             // 

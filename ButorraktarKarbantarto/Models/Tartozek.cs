@@ -18,5 +18,11 @@ namespace ButorraktarKarbantarto.Models
             Ar = ar;
             Anyaga = anyaga;
         }
+
+        public override string ToString()
+        {
+            string tartozekFormatum = "Tipus: " + Tipus + ", Ar: " + Ar + ", Anyag: " + Anyaga;
+            return tartozekFormatum;
+        }
     }
 }

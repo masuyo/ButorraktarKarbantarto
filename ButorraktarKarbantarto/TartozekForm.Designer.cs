@@ -1,6 +1,6 @@
 ﻿namespace ButorraktarKarbantarto
 {
-    partial class Form3
+    partial class TartozekForm
     {
         /// <summary>
         /// Required designer variable.
@@ -66,7 +66,7 @@
             this.button2.TabIndex = 1;
             this.button2.Text = "Mégse";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.Megse_Click);
             // 
             // tartoelem
             // 

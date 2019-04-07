@@ -11,35 +11,28 @@ using System.Windows.Forms;
 
 namespace ButorraktarKarbantarto
 {
-    public partial class Form2 : Form
+    public partial class ButorForm : Form
     {
-        public Raktar Raktar { get; set; }
-        public Anyagfelek Anyag { get; set; }
-        public Helysegek Elhelyezes { get; set; }
+        private Raktar _raktar;
+        private Anyagfelek anyag = Anyagfelek.Fa;
+        private Helysegek elhelyezes;
+        private MainForm _main;
 
-        public Form1 myForm { get; set; }
-        public Form2(Raktar raktar, Form1 form)
+        public ButorForm(Raktar raktar, MainForm main)
         {
-            Raktar = raktar;
-            Anyag = Anyagfelek.Fa;
-            myForm = form;
+            _raktar = raktar;
+            _main = main;
             InitializeComponent();
-        }
-
-        private void Form2_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void hozzaAd_Click(object sender, EventArgs e)
         {
             Meret meret = new Meret(int.Parse(xTxb.Text), int.Parse(yTxb.Text), int.Parse(zTxb.Text));
-            Butor butor = new Butor(megnevezesTxb.Text, meret, Anyag, Elhelyezes, Convert.ToInt16(darab.Value));
-            //myForm.ListBoxRef.DataSource = Raktar.Butorok;
+            Butor butor = new Butor(megnevezesTxb.Text, meret, anyag, elhelyezes, Convert.ToInt16(darab.Value));
 
-            if (Raktar.Hozzaad(butor))
+            if (_raktar.Hozzaad(butor))
             {
-                myForm.ListBoxRef.Items.Add(butor);
+                _main.ButorListaFrissit(butor);
             }
             
         }
@@ -50,13 +43,13 @@ namespace ButorraktarKarbantarto
             switch (rb.Name)
             {
                 case "fem":
-                    Anyag = Anyagfelek.Fem;
+                    anyag = Anyagfelek.Fem;
                     break;
                 case "fa":
-                    Anyag = Anyagfelek.Fa;
+                    anyag = Anyagfelek.Fa;
                     break;
                 case "egyeb":
-                    Anyag = Anyagfelek.Egyeb;
+                    anyag = Anyagfelek.Egyeb;
                     break;
                 default:
                     break;
@@ -69,22 +62,22 @@ namespace ButorraktarKarbantarto
             switch (rb.Name)
             {
                 case "furdo":
-                    Elhelyezes = Helysegek.Furdo;
+                    elhelyezes = Helysegek.Furdo;
                     break;
                 case "nappali":
-                    Elhelyezes = Helysegek.Nappali;
+                    elhelyezes = Helysegek.Nappali;
                     break;
                 case "konyha":
-                    Elhelyezes = Helysegek.Konyha;
+                    elhelyezes = Helysegek.Konyha;
                     break;
                 default:
                     break;
             }
         }
 
-        private void megse_Click(object sender, EventArgs e)
+        private void Megse_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
     }
 }

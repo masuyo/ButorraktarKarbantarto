@@ -1,6 +1,7 @@
 ﻿using ButorraktarKarbantarto.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,11 +10,11 @@ namespace ButorraktarKarbantarto
 {
     public class Raktar
     {
-        public List<Butor> Butorok { get; set; }
+        public BindingList<Butor> Butorok { get; set; }
 
         public Raktar()
         {
-            Butorok = new List<Butor>();
+            Butorok = new BindingList<Butor>();
         }
 
         public bool Hozzaad(Butor butor)

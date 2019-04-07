@@ -1,6 +1,6 @@
 ﻿namespace ButorraktarKarbantarto
 {
-    partial class Form2
+    partial class ButorForm
     {
         /// <summary>
         /// Required designer variable.
@@ -86,7 +86,7 @@
             this.megse.Text = "Mégse";
             this.megse.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.megse.UseVisualStyleBackColor = true;
-            this.megse.Click += new System.EventHandler(this.megse_Click);
+            this.megse.Click += new System.EventHandler(this.Megse_Click);
             // 
             // label1
             // 
@@ -269,7 +269,6 @@
             this.Controls.Add(this.megnevezesTxb);
             this.Name = "Form2";
             this.Text = "Form2";
-            this.Load += new System.EventHandler(this.Form2_Load);
             this.anyagBox.ResumeLayout(false);
             this.anyagBox.PerformLayout();
             this.helysegBox.ResumeLayout(false);

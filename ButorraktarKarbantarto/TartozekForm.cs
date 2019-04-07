@@ -11,24 +11,24 @@ using System.Windows.Forms;
 
 namespace ButorraktarKarbantarto
 {
-    public partial class Form3 : Form
+    public partial class TartozekForm : Form
     {
-        public Raktar Raktar { get; set; }
-        public Form1 Form1 { get; set; }
-        private TartozekTipusok tipus = TartozekTipusok.DekorElem;
+        private MainForm _main;
+        private Butor _butor;
+        private TartozekTipusok tipus = TartozekTipusok.TartoElem;
         private Anyagfelek anyag = Anyagfelek.Fa;
-        public Form3(Raktar raktar, Form1 form1)
+
+        public TartozekForm(Butor butor, MainForm main)
         {
-            Raktar = raktar;
-            Form1 = form1;
+            _main = main;
+            _butor = butor;
             InitializeComponent();
         }
 
         private void Hozzaad_Click(object sender, EventArgs e)
         {
             Tartozek tartozek = new Tartozek(tipus, Convert.ToInt16(ar.Value), anyag);
-            Form1.KivalasztottButor.TartozekHozzaad(tartozek);
-            Form1.TartozekokBox.Items.Add(tartozek);
+            _butor.TartozekHozzaad(tartozek);
         }
 
         private void TartozekTipusValaszto_CheckedChanged(object sender, EventArgs e)
@@ -69,7 +69,7 @@ namespace ButorraktarKarbantarto
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Megse_Click(object sender, EventArgs e)
         {
             Close();
         }

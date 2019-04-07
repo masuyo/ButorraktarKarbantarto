@@ -6,11 +6,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ButorraktarKarbantarto
+namespace ButorraktarKarbantarto.Models
 {
     public class Raktar
     {
-        public BindingList<Butor> Butorok { get; set; }
+        public BindingList<Butor> Butorok { get; }
 
         public Raktar()
         {
